@@ -1,0 +1,74 @@
+.bg-color-D1EEFE {
+    background-color: #D1EEFE;
+}
+
+
+.encabezado {
+    font-style: italic;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 2px;
+    margin: 65px 6px 5px 6px;
+    border-radius: 8px;
+}
+.navbar-style {
+    padding:  5px 10px 5px 10px;
+    margin: 0px 2px 0px 2px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: #D1EEFE;
+    border-style: hidden;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: black;
+   
+    
+}
+.card-style {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    color: black;
+    font-size: 15px;
+    margin: 20px;
+    margin-top: 1px;
+    border: solid 3px #D1EEFE;
+    padding: 5px;
+    height: 92%;
+    
+}
+
+
+.border {
+    border-style: double;
+    border-radius: 4px;
+}
+.font-arial {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.titulo {
+    font-weight: bolder;
+}
+
+.margin-carousel {
+    margin-top: 2%;
+    margin-bottom: 0px;
+}
+.margin-notice {
+    margin: 20px ;
+}
+.footer {
+    height: 240px;
+    background-color: #D1EEFE;
+    margin: 20px 0px 0px 0px;
+    border-radius: 8px;
+}
+.copyright {
+    background-color: #B1B1B1;
+    border-radius: 8px;
+    width: 100%;
+}
+
+
+

@@ -1,5 +1,5 @@
 .bg-color-D1EEFE {
-    background-color: #0095B6;
+    background-color: #369ABE;
 }
 .bg-color-title {
     background-color: #369ABE;
@@ -15,7 +15,7 @@
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
     padding: 2px;
-    margin: 65px 6px 5px 6px;
+    margin: 65px 2px 5px 2px;
     border-radius: 8px;
 }
 .navbar-style {
@@ -23,7 +23,7 @@
     margin: 0px 2px 0px 2px;
     height: 60px;
     border-radius: 5px;
-    background-color: #0095B6;
+    background-color: #369ABE;
     border-style: hidden;
     font-style: italic;
     font-family: Arial, Helvetica, sans-serif;
@@ -39,17 +39,27 @@
     font-size: 15px;
     margin: 20px;
     margin-top: 1px;
-    border: solid 3px #D1EEFE;
     padding: 5px;
     height: 92%;
     
 }
-
-
-.border {
-    border-style: double;
-    border-radius: 4px;
+.sección-extra{
+    margin-top: 3px;
+    margin: 5px 2px 0px 2px;
+    border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: inherit;
 }
+.card {
+    background-color: #C6C8C3;
+    border: 2px solid  #369ABE;
+}
+
+.card-extra {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
 .font-arial {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -66,7 +76,7 @@
 }
 .footer {
     height: 240px;
-    background-color: #0095B6;
+    background-color:#369ABE;
     margin: 20px 0px 0px 0px;
     border-radius: 8px;
 }

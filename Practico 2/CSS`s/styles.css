@@ -1,5 +1,11 @@
 .bg-color-D1EEFE {
-    background-color: #D1EEFE;
+    background-color: #0095B6;
+}
+.bg-color-title {
+    background-color: #369ABE;
+}
+.bg-color-background {
+    background-color: #C6C8C3;
 }
 
 
@@ -17,7 +23,7 @@
     margin: 0px 2px 0px 2px;
     height: 60px;
     border-radius: 5px;
-    background-color: #D1EEFE;
+    background-color: #0095B6;
     border-style: hidden;
     font-style: italic;
     font-family: Arial, Helvetica, sans-serif;
@@ -60,7 +66,7 @@
 }
 .footer {
     height: 240px;
-    background-color: #D1EEFE;
+    background-color: #0095B6;
     margin: 20px 0px 0px 0px;
     border-radius: 8px;
 }

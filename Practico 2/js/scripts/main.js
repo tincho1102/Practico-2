@@ -34,3 +34,6 @@ let createRow = (elemento) => {
     createHeader(clavesPaises);
     createBody(dataParseada.paises);
   });
+
+
+  console.log(dataParseada.paises[3])

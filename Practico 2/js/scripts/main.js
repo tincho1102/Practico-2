@@ -4,6 +4,7 @@ let createHeader = (claves) => {
     let trEl = document.createElement("tr");
     for (let i = 0; i < claves.length; i++) {
       let thEl = document.createElement("th");
+      thEl.classList.add('bg-info')
       thEl.innerHTML = claves[i];
       trEl.appendChild(thEl);
     }
@@ -36,4 +37,3 @@ let createRow = (elemento) => {
   });
 
 
-  console.log(dataParseada.paises[3])

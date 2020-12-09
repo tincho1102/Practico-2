@@ -54,13 +54,30 @@
     <!--Principio del main-->
     <main>
         <div class="containe-fluid">
+            
             <div class="row bg-color-title sección-extra">
                 <div class="col-md-5 offset"></div>
                 <div class="col-md-4">
                     <h2>Sección Extra</h2>
                 </div>    
             </div>
+            <p>
 
+            </p>
+            <!--Empieza la fila de la tabla-->
+            <div class="row">
+              <div class="col-md-1 offset"></div>
+              <table class="col-md-10 table table-striped table-hover" id="tabla"></table>
+            </div>
+            <div class="row">
+              <div class="col-md-9 offset"></div>
+                <div class="col-md-3">
+                  <button class="btn btn-outline-primary" id="agregar">Agregar otra fila</button>
+                </div>
+            </div>
+            <p>
+              
+            </p>
             <div class="row">
                 <div class="col-md-4 offset"></div>
                 <div class="col-md-4">
@@ -113,24 +130,28 @@
                     </div>
                     </div>
                 </div>
-            </div>
-            <!--Empieza la fila de la tabla-->
-            <div class="row">
-              <div class="col-md-1 offset"></div>
-              <table class="col-md-10 table table-striped table-hover" id="tabla"></table>
-            </div>    
+            </div> 
+                <!-- overlay -->
+            <div class="overlay-style display-none">
+              <div class="modal-new">
+                <div class="card card-modal">
+                  <div class="container space-buttons"></div>
+                    <div class="row"> 
+                      <h5 class="card-title">¿Seguro que desea eliminar esta fila?</h5>
+                    </div>  
+                    <div class="row">
+                      <p class="card-text">Si cancela la fila seguira en el su lugar original</p>
+                    </div>
+                    <div class="row">  
+                      <div class="col-md-5 offset"></div>
+                      <button class="btn btn-danger button-modal">Cancelar</button>
+                      <button class="btn btn-primary button-modal">Aceptar</button>
+                    </div>  
+                  </div>  
+                </div>
+              </div>
+            </div>   
         </div>            
-
-
-
-
-
-
-
-
-
-
-
     </main>
 
 

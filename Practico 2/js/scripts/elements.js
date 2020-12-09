@@ -1,2 +1,2 @@
 let tableEl = document.getElementById("tabla")
-let btnDeleteEl = document.createElement("button")
+let overlayEl = document.getElementsByClassName('overlay-style')[0];

@@ -16,6 +16,9 @@ let createHeader = (claves) => {
     tableEl.appendChild(theadEl);
   };
 //header created
+let showModal = () => {
+  overlayEl.classList.remove('display-none');
+};
 
 let createRow = (elemento) => {
     let trEl = document.createElement("tr");
@@ -32,6 +35,7 @@ let createRow = (elemento) => {
     botonEliminar.classList.add('button-margin'),
     buttonElim.appendChild(botonEliminar);
     trEl.appendChild(buttonElim);
+    botonEliminar.addEventListener('click', showModal);
     //otro boton
     let botonModif = document.createElement('button');
     botonModif.textContent = "Editar";
@@ -49,10 +53,14 @@ let createRow = (elemento) => {
     }
     tableEl.appendChild(tbodyEl);
   };
+  
+  let btnEliminarEl = document.getElementById('btnEliminar');
 
   window.addEventListener("load", () => {
     createHeader(clavesPaises);
     createBody(dataParseada.paises);
   });
+
+ 
 
 

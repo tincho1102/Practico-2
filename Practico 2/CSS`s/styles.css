@@ -7,10 +7,9 @@
 .bg-color-background {
     background-color: #C6C8C3;
 }
-
 body{
-    overflow-x: hidden;
- }
+    overflow-x:hidden;
+}
 .encabezado {
     font-style: italic;
     font-size: 50px;
@@ -89,9 +88,38 @@ body{
     width: 100%;
 }
 .button-margin {
-    margin-bottom: 4px;
+    margin-right: 2px;
 }
-
-
-
-
+.overlay-style {
+    top: 255px;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background-color: rgba(0,0,0,0.8);
+}
+.display-none {
+    display: none;
+}
+.hidden {
+    visibility: hidden;
+}
+.card-modal{
+    padding: 30px;
+    width: auto;
+    height: 50%;
+    border-radius: 0px;
+}
+.space-buttons{
+    display: flex;
+    align-content: space-between;
+}
+.button-modal{
+    margin-top: 14px;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-bottom: 2px;
+}

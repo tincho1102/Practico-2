@@ -16,9 +16,18 @@ let createHeader = (claves) => {
     tableEl.appendChild(theadEl);
   };
 //header created
-let showModal = () => {
-  overlayEl.classList.remove('display-none');
+let showModalElim = () => {
+  overlayElim.classList.remove('display-none');
+  modalElimEl.classList.remove('display-none');
 };
+let showModalEdit = () => {
+  overlayEdit.classList.remove('display-none');
+  modalEditEl.classList.remove('display-none');
+}
+let showModalAgregar = () => {
+  overlayAgregar.classList.remove('display-none');
+  modalAgregarEl.classList.remove('display-none');
+}
 
 let createRow = (elemento) => {
     let trEl = document.createElement("tr");
@@ -35,16 +44,18 @@ let createRow = (elemento) => {
     botonEliminar.classList.add('button-margin'),
     buttonElim.appendChild(botonEliminar);
     trEl.appendChild(buttonElim);
-    botonEliminar.addEventListener('click', showModal);
+    botonEliminar.addEventListener('click', showModalElim);
     //otro boton
     let botonModif = document.createElement('button');
     botonModif.textContent = "Editar";
     botonModif.classList.add('btn-primary');
     botonModif.classList.add('btn');
+    botonModif.addEventListener('click', showModalEdit)
     buttonElim.appendChild(botonModif);
 
     return trEl;
   };
+  btnAgregarEl.addEventListener('click', showModalAgregar);
 
   let createBody = (elementos) => {
     let tbodyEl = document.createElement("tbody");
@@ -54,8 +65,6 @@ let createRow = (elemento) => {
     tableEl.appendChild(tbodyEl);
   };
   
-  let btnEliminarEl = document.getElementById('btnEliminar');
-
   window.addEventListener("load", () => {
     createHeader(clavesPaises);
     createBody(dataParseada.paises);

@@ -123,3 +123,8 @@ body{
     margin-right: 4px;
     margin-bottom: 2px;
 }
+input{
+    padding: 1px;
+    margin: 5px;
+    margin-bottom: 20px;
+}

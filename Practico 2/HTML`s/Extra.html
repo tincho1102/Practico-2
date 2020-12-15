@@ -70,10 +70,19 @@
               <table class="col-md-10 table table-striped table-hover" id="tabla"></table>
             </div>
             <div class="row">
-              <div class="col-md-9 offset"></div>
-                <div class="col-md-3">
-                  <button class="btn btn-outline-primary" id="agregar">Agregar otra fila</button>
-                </div>
+              <div class="col md 1">
+                <select name="Filtros" id="filtro">
+                  <option value="todos">Todos</option>
+                  <option value="top10Indice">Top 10 Indice de libertad</option>
+                  <option value="Notop10Indice">Fuera del top 10</option>
+                </select>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-outline-primary" id="filtrar">Filtrar</button>
+              </div>
+              <div class="col-md-6">
+                <button class="btn btn-outline-primary" id="agregar">Agregar otra fila</button>
+              </div>
             </div>
             <p>
               
@@ -145,8 +154,8 @@
                     </div>
                     <div class="row">  
                       <div class="col-md-5 offset"></div>
-                      <button class="btn btn-danger button-modal" id="cancelar">Cancelar</button>
-                      <button class="btn btn-primary button-modal" id="aceptar">Aceptar</button>
+                      <button class="btn btn-danger button-modal" id="cancelarElim">Cancelar</button>
+                      <button class="btn btn-primary button-modal" id="aceptarElim">Aceptar</button>
                     </div>  
                   </div>  
                 </div>
@@ -164,7 +173,7 @@
                     </div>  
                     <div class="row">
                       <label for="País">País:</label>
-                      <input type="text" id="pais" required>
+                      <input type="text" id="pais" readonly="readonly" disabled>
                       <label for="nombre">Nombre</label>
                       <input type="text" id="nombre" required>
                       <label for="salario">Salario:</label>
@@ -182,8 +191,8 @@
                     </div>
                     <div class="row">  
                       <div class="col-md-5 offset"></div>
-                      <button class="btn btn-danger button-modal">Cancelar</button>
-                      <button class="btn btn-primary button-modal">Aceptar</button>
+                      <button class="btn btn-danger button-modal" id="cancelarEdit">Cancelar</button>
+                      <button class="btn btn-primary button-modal" id="aceptarEdit">Aceptar</button>
                     </div>  
                   </div>  
                 </div>

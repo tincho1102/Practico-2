@@ -12,9 +12,14 @@ let modalAgregarEl = document.getElementById('modal-agregar');
 //Boton Agregar
 let btnAgregarEl = document.getElementById('agregar');
 //Botones modal eliminar
-let btnAceptarElim = document.getElementById('aceptar');
-let btnCancelarElim = document.getElementById('cancelar');
-
+let btnAceptarElim = document.getElementById('aceptarElim');
+let btnCancelarElim = document.getElementById('cancelarElim');
+//Botones modal editar
+let btnAceptarEdit = document.getElementById('aceptarEdit');
+let btnCancelarEdit = document.getElementById('cancelarEdit');
+//Elementos para filtro
+let btnFiltrar = document.getElementById('filtrar');
+let selectEl =document.getElementById('filtro');
 //Inputs editar
 let inputPais = document.getElementById('pais');
 let inputNombre = document.getElementById('nombre');

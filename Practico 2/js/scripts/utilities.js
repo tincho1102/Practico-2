@@ -10,7 +10,7 @@ let data = `{
         "Play Station 5": "3 días y medio",
         "Ultimo Iphone": "8 días",
         "Canasta basica": "$1890",
-        "Indice Libertad": "#4"
+        "Indice": 4
       },
       {
         "País": 2,
@@ -19,7 +19,7 @@ let data = `{
         "Play Station 5": "5 meses",
         "Ultimo Iphone": "1 año",
         "Canasta basica": "$112.5",
-        "Indice Libertad": "#156"
+        "Indice": 156
       },
       {
         "País": 3,
@@ -28,7 +28,7 @@ let data = `{
         "Play Station 5": "7 días y medio",
         "Ultimo Iphone": "19 días",
         "Canasta basica": "$709",
-        "Indice Libertad": "#9"
+        "Indice": 9
       },
       {
         "País": 4,
@@ -37,7 +37,7 @@ let data = `{
         "Play Station 5": "23 años",
         "Ultimo Iphone": "56 años",
         "Canasta basica": "$229",
-        "Indice Libertad": "#179"
+        "Indice": 179
       },
       {
         "País": 5,
@@ -46,16 +46,16 @@ let data = `{
         "Play Station 5": "5 días",
         "Ultimo Iphone": "14 días",
         "Canasta basica": "$780",
-        "Indice Libertad": "#5"
+        "Indice": 5
       },
       {
         "País": 6,
-        "Nombre": "Chile",
-        "Salario minimo": "$425",
-        "Play Station 5": "1 mes y medio",
-        "Ultimo Iphone": "2 meses y medio",
-        "Canasta basica": "$92",
-        "Indice Libertad": "#10"
+        "Nombre": "Cuba",
+        "Salario minimo": "$79",
+        "Play Station 5": "6 meses y medio",
+        "Ultimo Iphone": "1 año y 1 mes",
+        "Canasta basica": "$120",
+        "Indice": 178
       },
       {
         "País": 7,
@@ -64,7 +64,7 @@ let data = `{
         "Play Station 5": "8 días y medio",
         "Ultimo Iphone": "21 días",
         "Canasta basica": "$690",
-        "Indice Libertad": "#7"
+        "Indice": 7
       }
     ]
   }
@@ -72,6 +72,42 @@ let data = `{
 //Data parseada y KEYS 
 let dataParseada = JSON.parse(data);
 let clavesPaises = Object.keys(dataParseada.paises[0]);
+
+  // MODALS
+    //modal eliminar
+    let showModalElim = (i) => {
+      overlayElim.classList.remove('display-none');
+      modalElimEl.classList.remove('display-none');
+      btnAceptarElim.onclick = () => {
+        eliminar(i)
+      };
+      btnCancelarElim.onclick = () =>{
+        overlayElim.classList.add('display-none');
+        modalElimEl.classList.add('display-none');
+
+      }
+    };
+    //modal editar
+    let showModalEdit = (elemento, i) => {
+      overlayEdit.classList.remove('display-none');
+      modalEditEl.classList.remove('display-none');
+      let arregloValues = Object.values(elemento[i])
+      inputPais.value = arregloValues[0];
+      inputNombre.value = arregloValues[1];
+      inputSalario.value = arregloValues[2];
+      inputplay5.value = arregloValues[3];
+      inputIphone.value = arregloValues[4];
+      inputCanasta.value = arregloValues[5];
+      inputIndice.value = arregloValues[6];
+      btnAceptarEdit.onclick = () => {
+        editarFila(elemento, i)
+      };
+    };
+    //modal agregar
+    let showModalAgregar = () => {
+      overlayAgregar.classList.remove('display-none');
+      modalAgregarEl.classList.remove('display-none');
+    };
 
 //Head, Rows y Body de la tabla dinamica
     //Header
@@ -91,8 +127,7 @@ let createHeader = (claves) => {
   theadEl.appendChild(trEl);
   tableEl.appendChild(theadEl);
 };
-
-  //Rows
+    //Rows
   let createRow = (elemento, i) => {
     let trEl = document.createElement("tr");
     trEl.setAttribute("id", i);
@@ -115,7 +150,9 @@ let createHeader = (claves) => {
     let botonModif = document.createElement('button');
     botonModif.innerText = "Editar";
     botonModif.classList.add('btn', 'btn-primary');
-    botonModif.addEventListener('click', showModalEdit)
+    botonModif.addEventListener('click', () =>{
+      showModalEdit(dataParseada.paises, i)
+    })
     botonTd.appendChild(botonModif);
     return trEl;
   };
@@ -131,35 +168,59 @@ let createHeader = (claves) => {
     //FUNCIONES
     //Eliminar
     let eliminar = (i) => {
-      let rowElim = document.getElementById(i);
-      let parent = rowElim.parentNode;
-      parent.removeChild(rowElim);
+      let rowElim = dataParseada.paises.filter(pais =>pais.País != dataParseada.paises[i].País);
+      dataParseada.paises = rowElim
+      tableEl.innerHTML ='';
+      createHeader(clavesPaises);
+      createBody(rowElim);
+      // tableEl = '';
+      // createHeader(clavesPaises);
+      // createBody(rowElim);
+      // if(rowElim.parentNode){
+      //   rowElim.parentNode.removeChild(rowElim);
+      // }
       overlayElim.classList.add('display-none');
       modalElimEl.classList.add('display-none');
     };
     //Editar
-    // let editar = (elemento, i) => {
-      
-    // };
+    let editarFila = (elemento, i) =>{
+      let arregloValues = Object.values(elemento[i])
+      arregloValues[0] = inputPais.value;
+      arregloValues[1] = inputNombre.value;
+      arregloValues[2] = inputSalario.value;
+      arregloValues[3] = inputplay5.value;
+      arregloValues[4] = inputIphone.value;
+      arregloValues[5] = inputCanasta.value;
+      arregloValues[6] = inputIndice.value;
+      overlayEdit.classList.add('display-none');
+      modalEditEl.classList.add('display-none');
+    };
 
-
-
-  // MODALS
-    //modal eliminar
-  let showModalElim = (i) => {
-    overlayElim.classList.remove('display-none');
-    modalElimEl.classList.remove('display-none');
-    btnAceptarElim.addEventListener('click', () => {
-      eliminar(i)
-    })
-  };
-    //modal editar
-  let showModalEdit = () => {
-    overlayEdit.classList.remove('display-none');
-    modalEditEl.classList.remove('display-none');
-  };
-    //modal agregar
-  let showModalAgregar = () => {
-    overlayAgregar.classList.remove('display-none');
-    modalAgregarEl.classList.remove('display-none');
-  };
+    // FILTRO
+    const filtrar = () => {
+      switch (selectEl.value) {
+        case 'todos':
+          tableEl.innerHTML = '';
+          createHeader(clavesPaises);
+          createBody(dataParseada.paises);
+          break;
+        case 'top10Indice':
+          filtroTop10();
+          break;
+        case 'Notop10Indice':
+          filtroNoTop10();
+          break;  
+      }
+    };
+    let filtroTop10 = () => {
+      let filtrado = dataParseada.paises.filter(pais => pais.Indice <= 10);
+      tableEl.innerHTML = '';
+      createHeader(clavesPaises);
+      createBody(filtrado);
+    };
+    let filtroNoTop10 = () => {
+      let filtrado = dataParseada.paises.filter(pais => pais.Indice > 10);
+      tableEl.innerHTML = '';
+      createHeader(clavesPaises);
+      createBody(filtrado);
+    };

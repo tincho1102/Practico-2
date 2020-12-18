@@ -9,6 +9,5 @@ window.addEventListener("load", () => {
 btnFiltrar.addEventListener('click', filtrar);
 //
 
-
-  //Llamada boton agregar
-  btnAgregarEl.addEventListener('click', showModalAgregar);
+//Llamada boton agregar
+btnAgregarEl.addEventListener('click', showModalAgregar);

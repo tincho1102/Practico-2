@@ -70,10 +70,19 @@
               <table class="col-md-10 table table-striped table-hover" id="tabla"></table>
             </div>
             <div class="row">
-              <div class="col-md-9 offset"></div>
-                <div class="col-md-3">
-                  <button class="btn btn-outline-primary" id="agregar">Agregar otra fila</button>
-                </div>
+              <div class="col-md-2 offset"></div>
+              <div class="col-md-2">
+                <select name="Filtros" id="filtro">
+                  <option value="todos">Devolver todas las filas</option>
+                  <option value="top10Indice">Top 10 Indice de libertad</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-outline-primary" id="filtrar">Filtrar</button>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-outline-primary" id="agregar">Agregar otra fila</button>
+              </div>
             </div>
             <p>
               
@@ -145,8 +154,8 @@
                     </div>
                     <div class="row">  
                       <div class="col-md-5 offset"></div>
-                      <button class="btn btn-danger button-modal">Cancelar</button>
-                      <button class="btn btn-primary button-modal">Aceptar</button>
+                      <button class="btn btn-danger button-modal" id="cancelarElim">Cancelar</button>
+                      <button class="btn btn-primary button-modal" id="aceptarElim">Aceptar</button>
                     </div>  
                   </div>  
                 </div>
@@ -164,26 +173,26 @@
                     </div>  
                     <div class="row">
                       <label for="País">País:</label>
-                      <input type="text" id="pais" required>
+                      <input type="number" id="pais" readonly="readonly" disabled>
+                      <label for="nombre">Nombre</label>
+                      <input type="text" id="nombre" required>
                       <label for="salario">Salario:</label>
                       <input type="text" id="salario" required>
                       <label for="PS5">Play 5:</label>
-                      <input type="text" id="play5" required>
-                      <label for="Iphone">Iphone:</label>
-                      <input type="text" id="Iphone" required>
+                      <input type="text" id="play5" required> 
                     </div>
                     <div class="row">
-                      <label for="Transporte">Transporte:</label>
-                      <input type="text" id="Transporte" required>
+                      <label for="Iphone">Iphone:</label>
+                      <input type="text" id="Iphone" required>
                       <label for="canasta">Canasta:</label>
                       <input type="text" id="canasta" required>
                       <label for="Indice">Indice de libertad:</label>
-                      <input type="text" id="Indice" required>
+                      <input type="number" id="Indice" required>
                     </div>
                     <div class="row">  
                       <div class="col-md-5 offset"></div>
-                      <button class="btn btn-danger button-modal">Cancelar</button>
-                      <button class="btn btn-primary button-modal">Aceptar</button>
+                      <button class="btn btn-danger button-modal" id="cancelarEdit">Cancelar</button>
+                      <button class="btn btn-primary button-modal" id="aceptarEdit">Aceptar</button>
                     </div>  
                   </div>  
                 </div>
@@ -201,31 +210,45 @@
                     </div>  
                     <div class="row">
                       <label for="País">País:</label>
-                      <input type="text" id="pais" required>
+                      <input type="number" id="paisAgregar" readonly="readonly" disabled>
+                      <label for="Nombre">Nombre:</label>
+                      <input type="text" id="nombreAgregar" required>
                       <label for="salario">Salario:</label>
-                      <input type="text" id="salario" required>
+                      <input type="text" id="salarioAgregar" required>
                       <label for="PS5">Play 5:</label>
-                      <input type="text" id="play5" required>
-                      <label for="Iphone">Iphone:</label>
-                      <input type="text" id="Iphone" required>
+                      <input type="text" id="play5Agregar" required>
+                      
                     </div>
                     <div class="row">
-                      <label for="Transporte">Transporte:</label>
-                      <input type="text" id="Transporte" required>
+                      <label for="Iphone">Iphone:</label>
+                      <input type="text" id="IphoneAgregar" required>
                       <label for="canasta">Canasta:</label>
-                      <input type="text" id="canasta" required>
+                      <input type="text" id="canastaAgregar" required>
                       <label for="Indice">Indice de libertad:</label>
-                      <input type="text" id="Indice" required>
+                      <input type="number" id="IndiceAgregar" required>
                     </div>
                     <div class="row">  
                       <div class="col-md-5 offset"></div>
-                      <button class="btn btn-danger button-modal">Cancelar</button>
-                      <button class="btn btn-primary button-modal">Aceptar</button>
+                      <button class="btn btn-danger button-modal" id="btnCancelarAgregar">Cancelar</button>
+                      <button class="btn btn-primary button-modal" id="btnAceptarAgregar">Aceptar</button>
                     </div>  
                   </div>  
                 </div>
               </div>
-            </div>  
+            </div> 
+
+            <!--Modal progress-->
+            <div class="overlay-style display-none" id="overlay-progress">
+              <div class="modal-new display-none" id="modal-progress">
+                <div class="card card-modal">
+                  <div class="container">
+                    <div class="row"> 
+                      <h5 class=>Loading...</h5>
+                    </div>  
+                  </div>
+                </div>
+              </div>   
+            </div>
         </div>            
     </main>
 

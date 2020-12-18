@@ -91,9 +91,9 @@ body{
     margin-right: 2px;
 }
 .overlay-style {
-    top: 255px;
+    top: 0;
     left: 0;
-    height: 100%;
+    height: 145%;
     width: 100%;
     position: absolute; 
     display: flex;
@@ -112,10 +112,6 @@ body{
     width: auto;
     height: 50%;
     border-radius: 0px;
-}
-.space-buttons{
-    display: flex;
-    align-content: space-between;
 }
 .button-modal{
     margin-top: 14px;
